@@ -28,6 +28,14 @@ class HelloWorld extends React.Component{
   }
 }
 
+/**
+ * <button
+ *  onClick={() => this.setState({name: ' Manuel'})}
+ * >
+ *  {'Hello wolrd' + this.state.name + this.props.lastname}
+ * </button>
+ */
+
 
 ReactDOM.render(React.createElement(HelloWorld, { lastname: ' Martinez' }), document.querySelector('#root'));
 
