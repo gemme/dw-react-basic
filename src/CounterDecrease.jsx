@@ -1,25 +1,16 @@
-import React from 'react'
-import './style.css';
-import { connect } from 'react-redux';
+import React from "react";
+import "./style.css";
+import { useDispatch } from "react-redux";
 
-const CounterDecrease = (props) => {
-    return (
-      <div className={'counter'}>
-        <button onClick={
-          () => {
-            props.onDecrease();
-        }}>{'Decrease'}</button>
-      </div>
-    )
+export default function CounterDecrease(props) {
+  // redux hooks
+  const dispatch = useDispatch();
+  const onDecrease = () => {
+    dispatch({ type: "DECREASE_COUNTER" });
+  };
+  return (
+    <div className={"counter"}>
+      <button onClick={onDecrease}>{"Decrease"}</button>
+    </div>
+  );
 }
-
-const mapStateToProps = null;
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    // pass onDecrease as prop
-    onDecrease: () => dispatch({type: 'DECREASE_COUNTER'})
-  }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(CounterDecrease);

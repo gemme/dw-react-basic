@@ -1,6 +1,6 @@
 
 
-const initialState = 1001;
+const initialState = 1002;
 export const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
       case 'INCREASE_COUNTER':
