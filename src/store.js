@@ -1,4 +1,7 @@
-export const reducer = (state = 0, action = {}) => {
+
+
+const initialState = 1001;
+export const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
       case 'INCREASE_COUNTER':
         return state + 1;

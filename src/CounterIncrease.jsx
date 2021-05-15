@@ -1,22 +1,26 @@
 import React from 'react'
 import './style.css';
+import { connect } from 'react-redux';
 
-
-const onIncrease = (store) => {
-    const action = {
-      type: 'INCREASE_COUNTER',
-    };
-    store.dispatch(action);
-    const _stateRedux = store.getState();
-  };
-
-export const CounterIncrease = (props) => {
+const CounterIncrease = (props) => {
     return (
       <div className={'counter'}>
         <button onClick={
           () => {
-            onIncrease(props.store);
+            props.onIncrease();
         }}>{'Increase'}</button>
       </div>
     )
 }
+
+const mapStateToProps = null;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // pass onDecrease as prop
+    onIncrease: () => dispatch({type: 'INCREASE_COUNTER'})
+  }
+};
+
+// High Order Components
+export default connect(mapStateToProps, mapDispatchToProps)(CounterIncrease);
