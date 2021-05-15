@@ -1,0 +1,11 @@
+.app {
+    border: solid red;
+    padding: 20px;
+  }
+  
+  .counter {
+    display: inline-block;
+    border: solid green;
+    padding: 10px;
+  }
+  
